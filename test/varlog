@@ -1,0 +1,128 @@
+==8211== Memcheck, a memory error detector
+==8211== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==8211== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==8211== Command: ./gf2_mpi
+==8211== Parent PID: 8207
+==8211== 
+==8212== Conditional jump or move depends on uninitialised value(s)
+==8212==    at 0x4C2DB3C: malloc (vg_replace_malloc.c:299)
+==8212==    by 0xB72759B: MPID_Init (mpid_init.c:1649)
+==8212==    by 0xB6C8AEA: MPIR_Init_thread (initthread.c:717)
+==8212==    by 0xB6B607A: PMPI_Init (init.c:253)
+==8212==    by 0x4038AB: main (main.c:16)
+==8212== 
+==8212== Conditional jump or move depends on uninitialised value(s)
+==8212==    at 0xB163260: __I_MPI___intel_sse2_strncmp (in /share/apps/intel/compilers_and_libraries_2018.2.199/linux/mpi/intel64/lib/libmpifort.so.12.0)
+==8212==    by 0xB858BA1: ??? (simple_pmi.c:2376)
+==8212==    by 0xB859CD0: iPMI_Init (simple_pmi.c:295)
+==8212==    by 0xB727B43: init_pg (mpid_init.c:2134)
+==8212==    by 0xB727B43: MPID_Init (mpid_init.c:1740)
+==8212==    by 0xB6C8AEA: MPIR_Init_thread (initthread.c:717)
+==8212==    by 0xB6B607A: PMPI_Init (init.c:253)
+==8212==    by 0x4038AB: main (main.c:16)
+==8212== 
+==8212== Conditional jump or move depends on uninitialised value(s)
+==8212==    at 0xB163383: __I_MPI___intel_sse2_strncmp (in /share/apps/intel/compilers_and_libraries_2018.2.199/linux/mpi/intel64/lib/libmpifort.so.12.0)
+==8212==    by 0xB858BA1: ??? (simple_pmi.c:2376)
+==8212==    by 0xB859CD0: iPMI_Init (simple_pmi.c:295)
+==8212==    by 0xB727B43: init_pg (mpid_init.c:2134)
+==8212==    by 0xB727B43: MPID_Init (mpid_init.c:1740)
+==8212==    by 0xB6C8AEA: MPIR_Init_thread (initthread.c:717)
+==8212==    by 0xB6B607A: PMPI_Init (init.c:253)
+==8212==    by 0x4038AB: main (main.c:16)
+==8212== 
+==8211== Conditional jump or move depends on uninitialised value(s)
+==8211==    at 0xB724E02: ??? (mpid_init.c:345)
+==8211==    by 0xB727D73: MPID_Init (mpid_init.c:1760)
+==8211==    by 0xB6C8AEA: MPIR_Init_thread (initthread.c:717)
+==8211==    by 0xB6B607A: PMPI_Init (init.c:253)
+==8211==    by 0x4038AB: main (main.c:16)
+==8211== 
+==8211== Conditional jump or move depends on uninitialised value(s)
+==8211==    at 0xB724E07: ??? (mpid_init.c:345)
+==8211==    by 0xB727D73: MPID_Init (mpid_init.c:1760)
+==8211==    by 0xB6C8AEA: MPIR_Init_thread (initthread.c:717)
+==8211==    by 0xB6B607A: PMPI_Init (init.c:253)
+==8211==    by 0x4038AB: main (main.c:16)
+==8211== 
+==8211== Conditional jump or move depends on uninitialised value(s)
+==8211==    at 0x4C3548F: strstr (vg_replace_strmem.c:1613)
+==8211==    by 0xB736C4B: I_MPI_is_ofi_available (mpid_nem_impi_extensions.c:3076)
+==8211==    by 0xB736C4B: MPID_nem_impi_configuration_init (mpid_nem_impi_extensions.c:123)
+==8211==    by 0xB73C692: MPID_nem_init_ckpt (mpid_nem_init.c:664)
+==8211==    by 0xB509640: MPIDI_CH3_Init (ch3_init.c:125)
+==8211==    by 0xB72802D: MPID_Init (mpid_init.c:1857)
+==8211==    by 0xB6C8AEA: MPIR_Init_thread (initthread.c:717)
+==8211==    by 0xB6B607A: PMPI_Init (init.c:253)
+==8211==    by 0x4038AB: main (main.c:16)
+==8211== 
+==8211== Invalid write of size 4
+==8211==    at 0x40390B: main (main.c:25)
+==8211==  Address 0xe7d2850 is 8 bytes after a block of size 8 alloc'd
+==8211==    at 0x4C2DB8F: malloc (vg_replace_malloc.c:299)
+==8211==    by 0x4038E7: main (main.c:20)
+==8211== 
+==8211== Invalid write of size 4
+==8211==    at 0x401AEC: readInput (io.c:29)
+==8211==    by 0x40391D: main (main.c:27)
+==8211==  Address 0xe7d2848 is 0 bytes after a block of size 8 alloc'd
+==8211==    at 0x4C2DB8F: malloc (vg_replace_malloc.c:299)
+==8211==    by 0x4038E7: main (main.c:20)
+==8211== 
+==8211== Invalid write of size 8
+==8211==    at 0x401B33: readInput (io.c:34)
+==8211==    by 0x40391D: main (main.c:27)
+==8211==  Address 0xe7d2868 is 24 bytes after a block of size 16 in arena "client"
+==8211== 
+
+valgrind: m_mallocfree.c:303 (get_bszB_as_is): Assertion 'bszB_lo == bszB_hi' failed.
+valgrind: Heap block lo/hi size mismatch: lo = 80, hi = 221634784.
+This is probably caused by your program erroneously writing past the
+end of a heap block and corrupting heap metadata.  If you fix any
+invalid writes reported by Memcheck, this assertion failure will
+probably go away.  Please try that before reporting this as a bug.
+
+
+host stacktrace:
+==8211==    at 0x38083F48: show_sched_status_wrk (m_libcassert.c:343)
+==8211==    by 0x38084064: report_and_quit (m_libcassert.c:415)
+==8211==    by 0x380841F1: vgPlain_assert_fail (m_libcassert.c:481)
+==8211==    by 0x38091A9C: get_bszB_as_is (m_mallocfree.c:301)
+==8211==    by 0x38091A9C: get_bszB (m_mallocfree.c:311)
+==8211==    by 0x38091A9C: get_pszB (m_mallocfree.c:385)
+==8211==    by 0x38091A9C: vgPlain_describe_arena_addr (m_mallocfree.c:1527)
+==8211==    by 0x3807D673: vgPlain_describe_addr (m_addrinfo.c:186)
+==8211==    by 0x3807BF03: vgMemCheck_update_Error_extra (mc_errors.c:1141)
+==8211==    by 0x380800DA: vgPlain_maybe_record_error (m_errormgr.c:813)
+==8211==    by 0x3807B49A: vgMemCheck_record_address_error (mc_errors.c:760)
+==8211==    by 0x38059401: mc_LOADVn_slow (mc_main.c:1456)
+==8211==    by 0x803CBA434: ???
+==8211==    by 0x802BADF2F: ???
+==8211==    by 0x80200839F: ???
+==8211==    by 0x401B66: readInput (io.c:58)
+==8211==    by 0x80200839F: ???
+==8211==    by 0x1BFF: ???
+==8211==    by 0x148A3: ???
+==8211==    by 0x802BB0FFF: ??? (in /tmp/vgdb-pipe-shared-mem-vgdb-8211-by-wenjie-on-???)
+==8211==    by 0x3CE: ???
+
+sched status:
+  running_tid=1
+
+Thread 1: status = VgTs_Runnable (lwpid 8211)
+==8211==    at 0x401B74: readInput (io.c:59)
+==8211==    by 0x40391D: main (main.c:27)
+
+
+Note: see also the FAQ in the source distribution.
+It contains workarounds to several common problems.
+In particular, if Valgrind aborted or crashed after
+identifying problems in your program, there's a good chance
+that fixing those problems will prevent Valgrind aborting or
+crashing, especially if it happened in m_mallocfree.c.
+
+If that doesn't help, please report this bug to: www.valgrind.org
+
+In the bug report, send all the above text, the valgrind
+version, and what OS and version you are using.  Thanks.
+
